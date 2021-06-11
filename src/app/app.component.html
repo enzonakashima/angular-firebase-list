@@ -23,7 +23,7 @@
 
   <div *ngIf="authService.user | async">
     <!-- Logado como <b>{{(authService.user | async)?.email}}</b> --> Logado como
-    <b>{{(authService.currentUserEmail}}</b> |
+    <b>{{authService.currentUserEmail}}</b> |
     <button (click)="Logout()">Sair</button>
 
     <hr />

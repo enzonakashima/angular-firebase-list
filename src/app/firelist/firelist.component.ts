@@ -15,7 +15,10 @@ export class FirelistComponent implements OnInit {
   listRef: AngularFireList<any>;
   list: Observable<any[]>;
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(
+    private db: AngularFireDatabase,
+    private authService: AuthService
+  ) {
     this.listRef = db.list('list');
     this.list = this.listRef
       .snapshotChanges()
@@ -31,7 +34,8 @@ export class FirelistComponent implements OnInit {
   addItem() {
     this.listRef.push({
       name: this.name,
-      age: this.age
+      age: this.age,
+      email: this.authService.currentUserEmail
     });
     this.name = '';
     this.age = null;
