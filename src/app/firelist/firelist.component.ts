@@ -11,6 +11,7 @@ import { AuthService } from '../auth.service';
 })
 export class FirelistComponent implements OnInit {
   text: string;
+  idade: number;
   listRef: AngularFireList<any>;
   list: Observable<any[]>;
 
