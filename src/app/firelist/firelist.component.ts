@@ -10,8 +10,8 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./firelist.component.css']
 })
 export class FirelistComponent implements OnInit {
-  text: string;
-  idade: number;
+  name: string;
+  age: number;
   listRef: AngularFireList<any>;
   list: Observable<any[]>;
 
@@ -30,9 +30,11 @@ export class FirelistComponent implements OnInit {
 
   addItem() {
     this.listRef.push({
-      text: this.text
+      name: this.name,
+      age: this.age
     });
-    this.text = '';
+    this.name = '';
+    this.age = null;
   }
 
   deleteItem(key: string) {
