@@ -1,0 +1,41 @@
+<header>
+  <h1>Projeto Angular Firebase</h1>
+</header>
+<div class="container-fluid">
+  <div *ngIf="!(authService.user | async)">
+    <form>
+      <legend>Login</legend>
+
+      <div>Email</div>
+      <input type="text" name="email" [(ngModel)]="email" />
+
+      <div>Senha</div>
+      <input type="password" name="password" [(ngModel)]="password" />
+
+      <button (click)="LoginWithEmail()">Entrar com Email</button>
+      <button (click)="LoginWithGoogle()">Entrar com Google</button>
+    </form>
+  </div>
+
+  <div *ngIf="authService.authError" style="color: red">
+    {{authService.authError}}
+  </div>
+
+  <div *ngIf="authService.user | async">
+    Logado como <b>{{(authService.user | async)?.email}}</b> |
+    <button (click)="Logout()">Sair</button>
+
+    <hr />
+
+    <div class="nav">
+
+      <a [routerLink]="['']">Início</a> |
+      <a [routerLink]="['firelist']">Lista do Firebase</a>
+
+    </div>
+
+    <hr />
+    <router-outlet></router-outlet>
+
+  </div>
+</div>

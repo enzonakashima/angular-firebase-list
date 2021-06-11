@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+}
+
+my-app .container-fluid{
+  margin: 10px;
+}
+
+input {
+  padding: 5px;
+  border: 1px solid rgb(143, 143, 143);
+  border-radius: 24px;
+  outline: none;
+}
+
+button {
+  margin: 8px 8px ;
+  padding: 8px;
+  color: white;
+  background-color: rgb(143, 143, 143);
+  border: none;
+  border-radius: 24px;
+}
+
+button:hover {
+  background-color: rgb(77, 75, 75);
+  cursor: pointer;
+}
+
+legend{
+  font-size: 20px;
+}
